@@ -50,7 +50,8 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+        $car = Car::where('id', '=', $id)->firstOrFail();
+        return view('car.show', compact('car'));
     }
 
     /**
