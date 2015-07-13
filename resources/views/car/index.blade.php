@@ -6,33 +6,33 @@
             <div class='col-lg-12'>
                 <div class='row'>
                     <div class='col-lg-1 tableColumn'>
-                        Make
+                        <b>Make</b>
                     </div>
                     <div class='col-lg-1 tableColumn'>
-                        Model
+                        <b>Model</b>
                     </div>
                     <div class='col-lg-1 tableColumn'>
-                        Year
+                        <b>Year</b>
                     </div>
                     <div class='col-lg-1 tableColumn'>
-                        Description
+                        <b>Description</b>
                     </div>
                     <div class='col-lg-1 tableColumn'>
-                        HP
+                        <b>HP</b>
                     </div>
                     <div class='col-lg-1 tableColumn'>
-                        MPG
+                        <b>MPG</b>
                     </div>
                     <div class='col-lg-1 tableColumn'>
-                        MSRP
+                        <b>MSRP</b>
                     </div>
-                    <div class='col-lg-1 tableColumn'>
-                        Offer
+                    <div class='col-lg-2 tableColumn'>
+                        <b>Offer</b>
                     </div>
                 </div>
 
                 @foreach($cars as $car)
-                    <div class='row' id={{ $car->id }}>
+                    <div class='row clickable-row' id={{ $car->id }}>
                         <div class='col-lg-1 tableColumn'>
                             {{ $car->make }}
                         </div>
@@ -54,11 +54,9 @@
                         <div class='col-lg-1 tableColumn'>
                             {{ $car->msrp }}
                         </div>
-                        <div class='col-lg-1 tableColumn'>
+                        <div class='col-lg-2 tableColumn'>
                             {{ $car->offer }}
                         </div>
-
-
                     </div>
                 @endforeach
             </div>
