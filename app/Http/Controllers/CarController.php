@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Car;
+use App\Http\Requests\CarRequest;
 
 class CarController extends Controller
 {
@@ -29,17 +30,19 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view('car.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
+     * @param CarRequest $request
      * @return Response
      */
-    public function store()
+    public function store(CarRequest $request)
     {
-        //
+        $car = Car::create($request->all());
+        return redirect('car/' . $request->input('id'));
     }
 
     /**
@@ -62,18 +65,22 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = Car::where('id', '=', $id)->firstOrFail();
+        return view('car.edit', compact('car'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  int  $id
+     * @param  CarRequest $request
      * @return Response
      */
-    public function update($id)
+    public function update($id, CarRequest $request)
     {
-        //
+        $car = Car::where('id', '=', $id)->firstOrFail();
+        $car->update($request->all());
+        return redirect('car');
     }
 
     /**
