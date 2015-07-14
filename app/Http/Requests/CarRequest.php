@@ -30,7 +30,7 @@ class CarRequest extends Request
             'description' => 'required|max:255',
             'mpg' => 'required|digits_between:2,3',
             'hp' => 'required|digits_between:2,4',
-            'msrp' => 'required|digits_between:4,6',
+            'msrp' => 'required|digits_between:4,7',
             'offer' => 'required|max:255',
         ];
     }
