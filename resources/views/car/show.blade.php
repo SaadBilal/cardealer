@@ -42,5 +42,13 @@
         <div class='col-lg-2'> <b>Offer:</b> </div>
         <div class='col-lg-10'> {{ $car->offer }} </div>
     </div>
+    
+    @if(!Auth::guest())
+        <div class='row'>
+            <div class='col-lg-2'>
+                <a href='{{$car->id}}/edit' class='btn btn-primary'>Edit</a>
+            </div>
+        </div>
+    @endif
 
 @stop
