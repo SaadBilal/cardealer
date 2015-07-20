@@ -48,6 +48,11 @@
             <div class='col-lg-2'>
                 <a href='{{$car->id}}/edit' class='btn btn-primary'>Edit</a>
             </div>
+            <div class='col-lg-2'>
+                {!! Form::open(['url' => action('CarController@destroy', ['id' => $car->id]), 'method' => 'delete']) !!}
+                    <button type="submit" class="btn btn-danger btn-mini">Remove</button>
+                {!! Form::close() !!}
+            </div>
         </div>
     @endif
 

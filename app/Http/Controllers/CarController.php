@@ -97,6 +97,7 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Car::destroy($id);
+        return redirect('car');
     }
 }
